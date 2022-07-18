@@ -1,21 +1,27 @@
 import java.util.Scanner;
 
 public class LogicalProgram {
-    public static void Fibonacci(){
-        int n1=0,n2=1,i,n3,n;
-        Scanner r=new Scanner(System.in);
-        System.out.print("Enter Limit: ");
-        n=r.nextInt();
-        System.out.print("Fibonacci Series: "+n1+" "+n2);
-        for (i=2;i<=n;i++)
-        {
-            n3=n1+n2;
-            n1=n2;
-            n2=n3;
-            System.out.print(" "+n3);
+    public static void Prime() {
+        int i, n, count = 0;
+        Scanner r = new Scanner(System.in);
+        System.out.print("Enter number: ");
+        n = r.nextInt();
+        if (n == 0 || n == 1) {
+            System.out.println("Input number is not a prime number!");
+        } else {
+            for (i = 2; i < n; i++) {
+                if (n % i == 0) {
+                    count = count + 1;
+                    break;
+                }
+            }
+
+            if (count > 0) {
+                System.out.println("Number is a not prime number !");
+            } else System.out.println("Number is a prime");
         }
     }
     public static void main(String[] args) {
-        Fibonacci();
+        Prime();
     }
 }
